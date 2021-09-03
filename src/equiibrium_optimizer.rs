@@ -42,6 +42,30 @@ let a1 = 2.0;
 let a2 = 1.0;
 let gp = 0.5;
 
+// to store agents fitness values
+let mut fitness =vec![0.0f64; particles_no];
+
+while iter < max_iter {
+
+    for i in 0..c.len() {
+
+        // space bound
+        for j in 0..dim {
+            if c[i][j] < lb { c[i][j] = lb;}
+            if c[i][j] > ub { c[i][j] = ub;}
+        }
+
+        // compute fitness for agents
+        // fitness(i)=fobj(C(i,:));
+        fitness[i] = fobj(&c[i]);
+        
+        
+
+    }
+
+
+
+}
 
 
 
