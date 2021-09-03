@@ -1,4 +1,7 @@
-
+//----------------------------------------------------------------------------------
+// Implemented in Rust programming language by :
+// Saad Dahmani (sd.dahmani2000@gmail.com; s.dahmani@univ-bouira.dz)
+//----------------------------------------------------------------------------------
 
 pub fn f1(x : &Vec<f64>)-> f64 {
     let mut sum : f64 = 0.0;
