@@ -6,6 +6,6 @@
  - A. Faramarzi, M. Heidarinejad, B. Stephens, S. Mirjalili. Equilibrium optimizer: A novel optimization algorithm. Knowledge-Based Systems (2019). https://doi.org/10.1016/j.knosys.2019.105190
  - Equilibrium Optimizer matlab code  : https://github.com/afshinfaramarzi/Equilibrium-Optimizer 
 
-## license 
+## License 
 
 Apache 2.0 License
