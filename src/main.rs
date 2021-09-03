@@ -1,3 +1,12 @@
+// A. Faramarzi, M. Heidarinejad, B. Stephens, S. Mirjalili. Equilibrium optimizer: 
+// A novel optimization algorithm. Knowledge-Based Systems (2019). 
+// https://doi.org/10.1016/j.knosys.2019.105190
+//----------------------------------------------------------------------------------
+// Implemented in Rust programming language by :
+// Saad Dahmani (sd.dahmani2000@gmail.com; s.dahmani@univ-bouira.dz)
+// https://github.com/SaadDAHMANI/equilibrium_optimizer
+//----------------------------------------------------------------------------------
+
 
 include!("equiibrium_optimizer.rs");
 include!("benchmarks.rs");

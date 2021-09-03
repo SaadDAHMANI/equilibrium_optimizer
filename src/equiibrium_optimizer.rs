@@ -1,3 +1,12 @@
+// A. Faramarzi, M. Heidarinejad, B. Stephens, S. Mirjalili. Equilibrium optimizer: 
+// A novel optimization algorithm. Knowledge-Based Systems (2019). 
+// https://doi.org/10.1016/j.knosys.2019.105190
+//----------------------------------------------------------------------------------
+// Implemented in Rust programming language by :
+// Saad Dahmani (sd.dahmani2000@gmail.com; s.dahmani@univ-bouira.dz)
+// https://github.com/SaadDAHMANI/equilibrium_optimizer
+//----------------------------------------------------------------------------------
+
 
 use rand::distributions::Uniform;
 use rand::distributions::Distribution;
@@ -62,6 +71,9 @@ let mut _gcp :f64 =0.0;
 //------------------------------------------
 
 let mut convergence_curve = vec![0.0f64; max_iter]; 
+let mut _index : usize = 0;
+let mut _g0 : f64 = 0.0; 
+let mut _g : f64 = 0.0;
 
 
 while iter < max_iter {
@@ -140,8 +152,8 @@ while iter < max_iter {
         //-------------------------------------------------------
         // Ceq=C_pool(randi(size(C_pool,1)),:); 
         // random selection of one candidate from the pool
-         let index = interval.sample(&mut rng);
-         copy_vector(&c_pool[index], &mut ceq);
+         _index = interval.sample(&mut rng);
+         copy_vector(&c_pool[_index], &mut ceq);
          //--------------------------------------------------------
          // compute F using Eq(11) 
          for j in 0..dim {
@@ -158,19 +170,18 @@ while iter < max_iter {
          else {_gcp =0.0f64;}
       
          // Eq. 14
-         let g0 = _gcp*(ceq[j]-lambda[j]*c[i][j]);
+         _g0 = _gcp*(ceq[j]-lambda[j]*c[i][j]);
         
          // Eq 13
-         let g =g0*f[j];
+         _g =_g0*f[j];
         
         // Eq. 16
-         c[i][j] = ceq[j]+(c[i][j]-ceq[j])*f[j] +  (g/(lambda[j]*v))*(1.0-f[j]); 
+         c[i][j] = ceq[j]+(c[i][j]-ceq[j])*f[j] +  (_g/(lambda[j]*v))*(1.0-f[j]); 
         }    
     }
    
     convergence_curve[iter] = ceq1_fit;
-    iter+=1;
-    
+    iter+=1;    
 }
 
 //return results
