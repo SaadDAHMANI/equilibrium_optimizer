@@ -24,7 +24,7 @@ fn main() {
     let dim = 30;
 
     let chronos = Instant::now();
-
+    {
     let (fbest, bestsol, convergcrv) = run_eo(particuls, kmax, lb,ub, dim, &f2);
 
     let duration = chronos.elapsed();
@@ -34,5 +34,5 @@ fn main() {
     println!("best fitness CV {:?}", convergcrv[convergcrv.len()-1]);
 
     println!("End computation in : {:?}", duration);
-
+    }
 }
