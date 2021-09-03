@@ -26,7 +26,23 @@ let mut ceq3_fit = f64::MAX;
 
 let mut ceq4_fit = f64::MAX;
 
+
+//C=initialization(Particles_no,dim,ub,lb);
 let mut c =initialization(particles_no, dim, lb, ub);
+
+// Iter=0; V=1;
+let mut iter =0;
+let v =1;
+
+//
+// a1=2;
+// a2=1;
+// GP=0.5;
+let a1 = 2.0;
+let a2 = 1.0;
+let gp = 0.5;
+
+
 
 
 }
